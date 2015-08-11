@@ -87,7 +87,7 @@ if [ -d $LOCAL_SOURCE_DIR/modules ]; then
   cp -vr $LOCAL_SOURCE_DIR/modules/* $JBOSS_HOME/modules/
 fi
 
-if [ -z "$APPLICATION_ARTIFACT_URL" ]; then
+if [ ! -z "$APPLICATION_ARTIFACT_URL" ]; then
     echo "deploying artifact found at $APPLICATION_ARTIFACT_URL";
     curl -L -o $DEPLOY_DIR $APPLICATION_ARTIFACT_URL
 fi
