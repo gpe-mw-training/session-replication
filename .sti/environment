@@ -1,1 +1,2 @@
 DISABLE_ASSET_COMPILATION=true
+APPLICATION_ARTIFACT_URL=http://jenkins.devops.ose.jbrideratwater.com/job/OpenShift%20Sample/lastSuccessfulBuild/artifact/target/session-replication.war

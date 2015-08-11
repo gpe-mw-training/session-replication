@@ -24,6 +24,7 @@ function copy_artifacts() {
 # Copy the source for compilation
 cp -ad /tmp/src/* $LOCAL_SOURCE_DIR
 
+# JA Bride:  adding this environment variable to provide ability to skip a maven build even the project has a pom.xml
 echo DISABLE_ASSET_COMPILATION = $DISABLE_ASSET_COMPILATION
 
 # If a pom.xml is present, this is a normal build scenario
@@ -84,6 +85,11 @@ fi
 if [ -d $LOCAL_SOURCE_DIR/modules ]; then
   echo "Copying modules from project..."
   cp -vr $LOCAL_SOURCE_DIR/modules/* $JBOSS_HOME/modules/
+fi
+
+if [ -z "$APPLICATION_ARTIFACT_URL" ]; then
+    echo "deploying artifact found at $APPLICATION_ARTIFACT_URL";
+    curl -L -o $DEPLOY_DIR $APPLICATION_ARTIFACT_URL
 fi
 
 exit 0
