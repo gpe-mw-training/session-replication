@@ -96,8 +96,9 @@ if [ -d $LOCAL_SOURCE_DIR/modules ]; then
 fi
 
 if [ ! -z "$APPLICATION_ARTIFACT_URL" ]; then
-    echo "deploying artifact found at $APPLICATION_ARTIFACT_URL";
-    curl -L -o $DEPLOY_DIR $APPLICATION_ARTIFACT_URL
+    APP_NAME=`basename $APPLICATION_ARTIFACT_URL`
+    echo "deploying artifact found at $APPLICATION_ARTIFACT_URL to: $DEPLOY_DIR/$APP_NAME";
+    curl -L -o $DEPLOY_DIR/$APP_NAME $APPLICATION_ARTIFACT_URL
 fi
 
 exit 0
