@@ -7,6 +7,8 @@
 #
 # 2) APPLICATION_ARTIFACT_URL       :   if set, this script will use curl to download the previously built application artifact.
 #                                       once downloaded, application artifact will be included in the $JBOSS_HOME/standalone/deployments directory
+# 3) DOWNLOAD_USER_CREDENTIALS      :   if set, will utilize this as an argument to curl utility if/when downloading $APPLICATION_ARTIFACT_URL
+#                                       Must be in <user:password> convention
 
 echo DISABLE_ASSET_COMPILATION = $DISABLE_ASSET_COMPILATION
 echo APPLICATION_ARTIFACT_URL = $APPLICATION_ARTIFACT_URL
@@ -98,7 +100,13 @@ fi
 if [ ! -z "$APPLICATION_ARTIFACT_URL" ]; then
     APP_NAME=`basename $APPLICATION_ARTIFACT_URL`
     echo "deploying artifact found at $APPLICATION_ARTIFACT_URL to: $DEPLOY_DIR/$APP_NAME";
-    curl -L -o $DEPLOY_DIR/$APP_NAME $APPLICATION_ARTIFACT_URL
+    if [ -z "$DOWNLOAD_USER_CREDENTIALS" ];
+    then
+        curl -L -o $DEPLOY_DIR/$APP_NAME $APPLICATION_ARTIFACT_URL
+    else
+        echo "downloading artifact with credentials: $DOWNLOAD_USER_CREDENTIALS";
+        curl -L -u $DOWNLOAD_USER_CREDENTIALS -o $DEPLOY_DIR/$APP_NAME $APPLICATION_ARTIFACT_URL
+    fi
 fi
 
 exit 0
