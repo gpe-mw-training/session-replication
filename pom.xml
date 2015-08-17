@@ -6,30 +6,21 @@
     <packaging>war</packaging>
     <version>1.0</version>
     <name>session-replication</name>
+
+    <!-- Example usage: mvn clean package -DskipTests -DOSE_NEXUS_HOST=nexus.devops.ose.jbrideratwater.com -->
     <repositories>
         <repository>
-            <id>eap</id>
-            <url>http://maven.repository.redhat.com/techpreview/all</url>
-            <releases>
-                <enabled>true</enabled>
-            </releases>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
+            <id>Nexus Repository</id>
+            <url>http://${OSE_NEXUS_HOST}/content/groups/public/</url>
         </repository>
     </repositories>
     <pluginRepositories>
         <pluginRepository>
-            <id>eap</id>
-            <url>http://maven.repository.redhat.com/techpreview/all</url>
-            <releases>
-                <enabled>true</enabled>
-            </releases>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
+            <id>Nexus Repository</id>
+            <url>http://${OSE_NEXUS_HOST}/content/groups/public/</url>
         </pluginRepository>
     </pluginRepositories>
+
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.6</maven.compiler.source>
@@ -89,4 +80,5 @@ jboss-eap-*-maven-repository/org/jboss/spec/jboss-javaee-6.0
             </build>
         </profile>
     </profiles>
+
 </project>
