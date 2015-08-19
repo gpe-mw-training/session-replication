@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# JA Bride:  now making use of the following two environment variables:
+# JA Bride:  now making use of the following environment variables:
 #
 # 1) DISABLE_ASSET_COMPILATION      :   if set to true, the application's maven build will be skipped even the project has a pom.xml
 #                                       Useful if the JEE application is previously built in a CI/Jenkins environment
