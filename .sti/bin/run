@@ -1,0 +1,4 @@
+#!/bin/sh
+
+export JAVA_OPTS_APPEND="-agentlib:jdwp=transport=dt_socket,address=8787,server=y,suspend=n"
+exec $JBOSS_HOME/bin/openshift-launch.sh
