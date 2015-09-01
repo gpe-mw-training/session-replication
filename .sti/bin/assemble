@@ -9,6 +9,8 @@
 #                                       once downloaded, application artifact will be included in the $JBOSS_HOME/standalone/deployments directory
 # 3) DOWNLOAD_USER_CREDENTIALS      :   if set, will utilize this as an argument to curl utility if/when downloading $APPLICATION_ARTIFACT_URL
 #                                       Must be in <user:password> convention
+#
+# JA Bride:  now also copying any files that might exist in this JEE project's bin directory to $JBOSS_HOME/bin
 
 echo DISABLE_ASSET_COMPILATION = $DISABLE_ASSET_COMPILATION
 echo APPLICATION_ARTIFACT_URL = $APPLICATION_ARTIFACT_URL
@@ -95,6 +97,11 @@ fi
 if [ -d $LOCAL_SOURCE_DIR/modules ]; then
   echo "Copying modules from project..."
   cp -vr $LOCAL_SOURCE_DIR/modules/* $JBOSS_HOME/modules/
+fi
+
+if [ -d $LOCAL_SOURCE_DIR/bin ]; then
+  echo "Copying shell scripts from project bin directory..."
+  cp -vr $LOCAL_SOURCE_DIR/bin/* $JBOSS_HOME/bin/
 fi
 
 if [ ! -z "$APPLICATION_ARTIFACT_URL" ]; then
