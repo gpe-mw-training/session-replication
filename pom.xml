@@ -7,24 +7,6 @@
     <version>1.0</version>
     <name>session-replication</name>
 
-    <!-- 
-         Example execution:   mvn clean package -DskipTests -DOSE_NEXUS_HOST=nexus.devops.ose.jbrideratwater.com
-         NOTE:  setting of OSE_NEXUS_HOST system property does not work with Maven v3.0.5 .... which is version of Maven found in stock RHEL-server 7 base yum repository
-                Subsequently, this does not work in OSEv3 S2I (which leverages maven from base RHEL7 OS
-    -->
-    <repositories>
-        <repository>
-            <id>Nexus Repository</id>
-            <url>http://${OSE_NEXUS_HOST}/content/groups/public/</url>
-        </repository>
-    </repositories>
-    <pluginRepositories>
-        <pluginRepository>
-            <id>Nexus Repository</id>
-            <url>http://${OSE_NEXUS_HOST}/content/groups/public/</url>
-        </pluginRepository>
-    </pluginRepositories>
-
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.6</maven.compiler.source>
