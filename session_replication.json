@@ -69,7 +69,7 @@
                 "name": "session-replication-http-route"
             },
             "spec": {
-                "host": "session-replication.devops.ose.jbrideratwater.com",
+                "host": "session-replication.jbride-redhat-osedev.cloudapps.mwl.opentlc.com",
                 "to": {
                     "name": "session-replication"
                 }
@@ -121,7 +121,7 @@
 			"env": [
       			  {
         			"Name": "MAVEN_ARGS",
-        			"Value": "clean package -DskipTests -DOSE_NEXUS_HOST=nexus.devops.ose.jbrideratwater.com"
+        			"Value": "clean package -DskipTests -s maven/nexus-hardcoded-settings.xml"
       			  }
     			]
                     },
