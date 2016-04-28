@@ -69,7 +69,7 @@ def checkPort(server, port) {
 
 def prepareBuild(version, branch) {
     sh "git checkout -b ${branch}"
-    sh "mvn -f pom.xml versions:set -DgenerateBackupPoms=false -DnewVersion=${version} -DOSE_NEXUS_HOST=inf00-mwl.opentlc.com"
+    sh "mvn -f pom.xml versions:set -DgenerateBackupPoms=false -DnewVersion=${version} -DOSE_NEXUS_HOST=nexus.ml.opentlc.com"
 }
 
 def build() {   
@@ -81,7 +81,7 @@ def integrationTests() {
 }
 
 def publishToNexusAndCommitBranch(version, branch) {
-    sh "mvn -f pom.xml deploy -DaltDeploymentRepository=internal.nexus::default::http://nexus:8080/nexus/content/repositories/releases"
+    sh "mvn -f pom.xml deploy -DaltDeploymentRepository=internal.nexus::default::http://nexus:8080/content/repositories/releases"
     def commit = "Build " + version
     sh "git add **/pom.xml && git commit -m \"${commit}\" && git push origin ${branch}"
 }

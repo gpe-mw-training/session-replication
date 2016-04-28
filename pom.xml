@@ -52,13 +52,13 @@ jboss-eap-*-maven-repository/org/jboss/spec/jboss-javaee-6.0
                 <repositories>
                     <repository>
                         <id>Nexus Repository</id>
-                        <url>http://inf00-mwl.opentlc.com/nexus/content/groups/public/</url>
+                        <url>http://nexus.ml.opentlc.com/content/groups/public/</url>
                     </repository>
                 </repositories>
                 <pluginRepositories>
                     <pluginRepository>
                         <id>Nexus Repository</id>
-                        <url>http://inf00-mwl.opentlc.com/nexus/content/groups/public/</url>
+                        <url>http://nexus.ml.opentlc.com/content/groups/public/</url>
                     </pluginRepository>
                 </pluginRepositories>
             <build>

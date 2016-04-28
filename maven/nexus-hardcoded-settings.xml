@@ -21,8 +21,7 @@
                 <repository>
                     <id>nexus-public-all</id>
                     <name>Nexus Public repository (all)</name>
-                    <!--url>http://${OSE_NEXUS_HOST}:8081/content/groups/public/</url -->
-                    <url>http://inf00-mwl.opentlc.com/nexus/content/groups/public/</url>
+                    <url>http://nexus.ml.opentlc.com/content/groups/public/</url>
                     <layout>default</layout>
                     <releases>
                         <enabled>true</enabled>
@@ -38,8 +37,7 @@
                 <pluginRepository>
                     <id>nexus-public-all</id>
                     <name>Nexus Public repository (all)</name>
-                    <!--url>http://${OSE_NEXUS_HOST}:8081/content/groups/public/</url -->
-                    <url>http://inf00-mwl.opentlc.com/nexus/content/groups/public/</url>
+                    <url>http://nexus.ml.opentlc.com/content/groups/public/</url>
                     <layout>default</layout>
                     <releases>
                         <enabled>true</enabled>
