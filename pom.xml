@@ -36,7 +36,7 @@ jboss-eap-*-maven-repository/org/jboss/spec/jboss-javaee-6.0
         <dependency>
             <groupId>org.jboss.spec</groupId>
             <artifactId>jboss-javaee-6.0</artifactId>
-            <version>3.0.2.Final-redhat-4</version>
+            <version>3.0.2.Final-redhat-4</version> <!-- http://maven.repository.redhat.com/techpreview/all/org/jboss/spec/jboss-javaee-6.0/3.0.2.Final-redhat-4/jboss-javaee-6.0-3.0.2.Final-redhat-4.pom -->
             <type>pom</type>
             <scope>provided</scope>
         </dependency>
